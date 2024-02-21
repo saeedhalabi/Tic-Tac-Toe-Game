@@ -6,11 +6,54 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-family: "Roboto Condensed", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(to bottom, #614385, #516395) no-repeat;
   height: 100vh;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.game-container {
+  text-align: center;
+  font-size: 1.438rem;
+}
+
+.turn-text {
+  text-align: center;
+  font-size: 1.875rem;
+  margin-bottom: 2em;
+}
+
+.scores {
+  display: flex;
+  gap: 90px;
+  justify-content: space-around;
+  margin: 1.25em 0 1.25em 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.grid button {
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  border: 3px solid #fff;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.1s;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.grid button:active {
+  transform: scale(1);
 }
