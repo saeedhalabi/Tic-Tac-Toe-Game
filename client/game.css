@@ -73,3 +73,7 @@ body {
 #restart:hover {
   background-color: #f0f0f0;
 }
+
+#win-text {
+  margin-top: 40px;
+}

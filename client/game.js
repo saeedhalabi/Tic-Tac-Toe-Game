@@ -1,5 +1,6 @@
 // Initializing game mechanics
 let mainPlayer = "X";
+let turn = document.getElementById("turn-text");
 
 // Handles the click event on a cell button. If the cell is empty, it fills the cell with the current player's symbol (X or O) and toggles the current player.
 function cellClick(button) {
@@ -11,11 +12,10 @@ function cellClick(button) {
   } else {
     mainPlayer = "X";
   }
-}
-
-// Restart Button (Restarts the game)
-function restartBtn() {
-  // Get all buttons with the class 'grid'
-  // Loop through each button
-  // Clear the inner HTML of the button
+  // handle turns
+  if (mainPlayer === "X") {
+    turn.innerHTML = "X's turn";
+  } else if (mainPlayer === "O") {
+    turn.innerHTML = "O's Turn";
+  }
 }
