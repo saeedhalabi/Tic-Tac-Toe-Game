@@ -1,21 +1,30 @@
-// Initializing game mechanics
-let mainPlayer = "X";
-let turn = document.getElementById("turn-text");
+// Game mechanics
+let currentPlayer = "X";
+let playerTurnDisplay = document.getElementById("turn-text");
+let player1ScoreDisplay = document.getElementById("player1-score");
+let player2ScoreDisplay = document.getElementById("player2-score");
+let winText = document.getElementById("win-text");
+let restartBtn = document.getElementById("restart");
 
-// Handles the click event on a cell button. If the cell is empty, it fills the cell with the current player's symbol (X or O) and toggles the current player.
+// track players scores
+let player1Score = 0;
+let player2Score = 0;
+
 function cellClick(button) {
   if (button.innerHTML === "") {
-    button.innerHTML = mainPlayer;
+    button.innerHTML = currentPlayer;
   }
-  if (mainPlayer === "X") {
-    mainPlayer = "O";
+  if (currentPlayer === "X") {
+    currentPlayer = "O";
   } else {
-    mainPlayer = "X";
+    currentPlayer = "X";
   }
-  // handle turns
-  if (mainPlayer === "X") {
-    turn.innerHTML = "X's turn";
-  } else if (mainPlayer === "O") {
-    turn.innerHTML = "O's Turn";
+  // check for turns
+  if (currentPlayer === "X") {
+    playerTurnDisplay.innerHTML = "X's turn";
+  } else if (currentPlayer === "O") {
+    playerTurnDisplay.innerHTML = "O's Turn";
   }
 }
+
+function checkWinner() {}
