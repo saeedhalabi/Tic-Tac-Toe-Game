@@ -50,14 +50,23 @@ body {
   color: #fff;
   font-size: 2rem;
   cursor: pointer;
-  transition: transform 0.1s;
+  transition: all ease-in-out 0.3s;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
-.grid button:active {
-  transform: scale(1);
+.grid button:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
-#restart {
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+#restart,
+#new-game {
   width: 55%;
   padding: 10px;
   border-radius: 20px;
@@ -70,9 +79,14 @@ body {
   transition: background-color 0.3s;
 }
 
-#restart:hover {
+#new-game {
+  margin-top: -15px;
+}
+
+#restart:hover,
+#new-game:hover {
   background-color: #e6e6e6;
-  transform: scale(1.1);
+  transform: translateY(1.1px);
   transition: background-color 0.3s, transform 0.3s;
 }
 

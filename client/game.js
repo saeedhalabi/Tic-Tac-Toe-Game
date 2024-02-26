@@ -129,6 +129,34 @@ function displayWinner(symbol) {
   winText.style.fontWeight = "bold";
 }
 
+// Restart functionality
+function restartBtn() {
+  for (let i = 0; i < 9; i++) {
+    let button = document.getElementById("button" + i);
+    button.innerHTML = "";
+    button.disabled = false; // Re-enable the button
+    button.style.background = ""; // reset button color
+    currentPlayer = "X"; // resets the default player
+  }
+  winText.innerHTML = "";
+  playerTurnDisplay.innerHTML = "X's turn"; // resets the turn
+}
+
+// new game functionality (creates a new game)
+function newGame() {
+  for (let i = 0; i < 9; i++) {
+    let button = document.getElementById("button" + i);
+    button.innerHTML = "";
+    button.disabled = false; // Re-enable the button
+    button.style.background = ""; // reset button color
+    currentPlayer = "X"; // resets the default player
+  }
+  winText.innerHTML = "";
+  playerTurnDisplay.innerHTML = "X's turn";
+  player1ScoreDisplay.querySelector("span").innerHTML = 0; // sets both values to 0
+  player2ScoreDisplay.querySelector("span").innerHTML = 0;
+}
+
 // Game state
 let currentPlayer = "X"; // Tracks the current player
 // Handles a cell click event
@@ -136,6 +164,7 @@ function cellClick(button) {
   // Ensure the cell is empty before placing a marker
   if (button.innerHTML === "") {
     button.innerHTML = currentPlayer;
+    button.disabled = true; // disable the button after its being clicked
   }
 
   // Switch to the next player

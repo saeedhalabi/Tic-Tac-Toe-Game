@@ -19,8 +19,12 @@
     <div class="game-container">
       <div class="turn-text" id="turn-text">X's turn</div>
       <div class="scores">
-        <div class="player-score" id="player1-score">Player 1: <span>0</span> </div>
-        <div class="player-score" id="player2-score">Player 2: <span>0</span> </div>
+        <div class="player-score" id="player1-score">
+          Player 1: <span>0</span>
+        </div>
+        <div class="player-score" id="player2-score">
+          Player 2: <span>0</span>
+        </div>
       </div>
       <div class="grid" id="grid">
         <button id="button0" onclick="cellClick(this)"></button>
@@ -33,7 +37,11 @@
         <button id="button7" onclick="cellClick(this)"></button>
         <button id="button8" onclick="cellClick(this)"></button>
       </div>
-      <button id="restart" onclick="restartBtn()">Restart</button>
+      <div class="buttons">
+        <button id="restart" onclick="restartBtn()">Restart</button>
+        <button id="new-game" onclick="newGame()">New Game</button>
+      </div>
+
       <p id="win-text"></p>
     </div>
 
