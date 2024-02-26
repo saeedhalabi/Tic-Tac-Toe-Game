@@ -13,6 +13,8 @@ let board = [];
 function checkWinner() {
   // boolean to check if winner is found
   let winnerFound = false;
+  // define a draw vaiable and set it to true for draw functionality
+
   let draw = true;
 
   // Go through each square on the board to see what symbol (X or O) is in it and store it in the board array
