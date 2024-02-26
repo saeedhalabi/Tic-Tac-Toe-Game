@@ -93,3 +93,47 @@ body {
 #win-text {
   margin-top: 40px;
 }
+
+/* Media queries for responsive design */
+@media screen and (max-width: 600px) {
+  .game-container {
+    font-size: 1.2rem;
+  }
+
+  .turn-text {
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+  }
+
+  .scores {
+    gap: 40px;
+    margin: 1em 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 80px);
+    grid-gap: 5px;
+    padding: 5px;
+  }
+
+  .grid button {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5rem;
+  }
+
+  #restart,
+  #new-game {
+    width: 70%;
+    margin-top: 20px;
+    font-size: 12px;
+  }
+
+  #new-game {
+    margin-top: 0;
+  }
+
+  #win-text {
+    margin-top: 20px;
+  }
+}
