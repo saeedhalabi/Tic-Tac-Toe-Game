@@ -30,6 +30,7 @@ function checkWinner() {
     // Display the winning message
     winText.innerHTML = `${board[0]} wins the game!`;
     winText.style.color = "lightgreen";
+    winText.style.fontWeight = "bold";
     winnerFound = true;
 
     // Update the score display based on the winner
@@ -47,6 +48,16 @@ function checkWinner() {
         document.getElementById("button" + i).disabled = true;
       }
     }
+  } else if (board[3] == board[4] && board[4] == board[5] && board[3] != "") {
+    // Change the background color of the winning buttons
+    document.getElementById("button" + 3).style.background = "#333";
+    document.getElementById("button" + 4).style.background = "#333";
+    document.getElementById("button" + 5).style.background = "#333";
+
+    //  Displays the winning message
+    winText.innerHTML = `${board[3]} wins the game!`;
+    winText.style.color = "lightgreen";
+    winText.style.fontWeight = "bold";
   }
 }
 
