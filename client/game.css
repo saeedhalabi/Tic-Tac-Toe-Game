@@ -71,7 +71,9 @@ body {
 }
 
 #restart:hover {
-  background-color: #f0f0f0;
+  background-color: #e6e6e6;
+  transform: scale(1.1);
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 #win-text {
