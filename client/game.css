@@ -214,29 +214,34 @@ body {
 
 /* Media query for medium screens (601px - 1024px width) */
 @media screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Adjusting the game container font size and margin for medium screens */
   .game-container {
     font-size: 1.5rem;
     margin-top: 20px;
   }
 
+  /* Adjusting the turn text font size, margin, and fallback for medium screens */
   .turn-text {
     font-size: 1.75rem;
     margin-bottom: 1em;
     font-size: 19px;
   }
 
+  /* Adjusting the gap, margin, and font size of the scores container for medium screens */
   .scores {
     gap: 30px;
     margin: 0.75em 0;
     font-size: 16px;
   }
 
+  /* Adjusting the grid layout for medium screens */
   .grid {
     grid-template-columns: repeat(3, 100px);
     grid-gap: 20px;
     padding: 10px;
   }
 
+  /* Adjusting the button size, font size, and margin for medium screens */
   .grid button {
     width: 88px;
     height: 88px;
@@ -244,6 +249,7 @@ body {
     margin-left: 10px;
   }
 
+  /* Adjusting the width, margin, and font size of restart and new game buttons for medium screens */
   #restart,
   #new-game {
     width: 45%;
@@ -251,10 +257,12 @@ body {
     font-size: 12px;
   }
 
+  /* Adjusting the margin of the new game button for medium screens */
   #new-game {
     margin-top: -16px;
   }
 
+  /* Adjusting the margin and font size of the win text for medium screens */
   #win-text {
     margin-top: 15px;
     font-size: 14px;
