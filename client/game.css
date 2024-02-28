@@ -208,5 +208,56 @@ body {
     position: relative;
     bottom: 22px;
     font-size: 17px;
+    text-align: center;
+  }
+}
+
+/* Media query for medium screens (601px - 1024px width) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .game-container {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+
+  .turn-text {
+    font-size: 1.75rem;
+    margin-bottom: 1em;
+    font-size: 19px;
+  }
+
+  .scores {
+    gap: 30px;
+    margin: 0.75em 0;
+    font-size: 16px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 20px;
+    padding: 10px;
+  }
+
+  .grid button {
+    width: 88px;
+    height: 88px;
+    font-size: 1.75rem;
+    margin-left: 10px;
+  }
+
+  #restart,
+  #new-game {
+    width: 45%;
+    margin-top: 15px;
+    font-size: 12px;
+  }
+
+  #new-game {
+    margin-top: -16px;
+  }
+
+  #win-text {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
   }
 }
