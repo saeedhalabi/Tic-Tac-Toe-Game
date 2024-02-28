@@ -3,17 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Link CSS File -->
     <link rel="stylesheet" href="game.css" />
-    <!-- Link Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-
-    <title>Tic Tac Toe | Game</title>
+    <title>Tic Tac Toe</title>
   </head>
   <body>
     <div class="game-container">
@@ -37,14 +28,13 @@
         <button id="button7" onclick="cellClick(this)"></button>
         <button id="button8" onclick="cellClick(this)"></button>
       </div>
+
       <div class="buttons">
         <button id="restart" onclick="restartBtn()">Restart</button>
         <button id="new-game" onclick="newGame()">New Game</button>
       </div>
-
       <p id="win-text"></p>
     </div>
-
     <script src="game.js"></script>
   </body>
 </html>
