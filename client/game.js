@@ -9,28 +9,40 @@ let winText = document.getElementById("win-text");
 let player1Score = 0;
 let player2Score = 0;
 
-let board = [];
-function checkWinner() {
-  // boolean to check if winner is found
-  let winnerFound = false;
-  // define a draw vaiable and set it to true for draw functionality
-  let draw = true;
+let board = [
+  ["", "", ""],
+  ["", "", ""],
+  ["", "", ""],
+];
 
-  // Go through each square on the board to see what symbol (X or O) is in it and store it in the board array
-  for (let i = 0; i < 9; i++) {
-    // Record the symbol (X or O) in each square on the board
-    board[i] = document.getElementById("button" + i).innerHTML;
-    // check if any square is empty
-    if (board[i] == "") {
-      draw = false;
+function createBoard() {
+  let btnNum = 0;
+  for (let i = 0; i < board.length; i++) {
+    for (let j = 0; j < board[i].length; j++) {
+      board[i][j] = document.getElementById("button" + btnNum).innerHTML;
+      btnNum++;
     }
   }
-  // check for a draw
-  if (draw) {
-    handleDraw();
+}
+
+function checkWinner() {
+  let winnerFound = false;
+  let draw = true;
+
+  // Check for a draw
+  for (let i = 0; i < board.length; i++) {
+    for (let j = 0; j < board[i].length; j++) {
+      if (board[i][j] === "") {
+        draw = false;
+        break;
+      }
+    }
+    if (!draw) {
+      break;
+    }
   }
 
-  // Check if there is a winner by checking rows, columns, and diagonals.
+  // Check if there is a winner by checking rows, columns, and diagonals
   let winner = checkRows() || checkColumns() || checkDiagonals();
 
   // If a winner is found, display the winner, update the score, disable buttons, and set winnerFound to true.
@@ -40,135 +52,126 @@ function checkWinner() {
     disableButtons();
     winnerFound = true;
   }
+
+  // Check for a draw
+  if (!winnerFound && draw) {
+    handleDraw();
+  }
 }
 
+// Draw functionality
 function handleDraw() {
   winText.innerHTML = "It's a draw!";
   winText.style.color = "#ff6b6b";
   winText.style.fontWeight = "bold";
   disableButtons();
-  return;
 }
 
+// Checks rows
 function checkRows() {
-  // rows
-  if (board[0] == board[1] && board[1] == board[2] && board[0] != "") {
-    changeCellColors([0, 1, 2]);
-    return board[0];
-  } else if (board[3] == board[4] && board[4] == board[5] && board[3] != "") {
-    changeCellColors([3, 4, 5]);
-    return board[3];
-  } else if (board[6] == board[7] && board[7] == board[8] && board[6] != "") {
-    return board[6];
+  for (let i = 0; i < board.length; i++) {
+    for (let j = 0; j < board[i].length; j++) {
+      if (
+        board[i][0] == board[i][1] &&
+        board[i][1] == board[i][2] &&
+        board[i][0] != ""
+      ) {
+        return board[i][0];
+      }
+    }
   }
   return null;
 }
 
+// Checks columns
 function checkColumns() {
-  // columns
-  if (board[0] == board[3] && board[3] == board[6] && board[0] != "") {
-    changeCellColors([0, 3, 6]);
-    return board[0];
-  } else if (board[1] == board[4] && board[4] == board[7] && board[1] != "") {
-    changeCellColors([1, 4, 7]);
-    return board[1];
-  } else if (board[2] == board[5] && board[5] == board[8] && board[2] != "") {
-    changeCellColors([2, 5, 8]);
-    return board[2];
+  for (let i = 0; i < board.length; i++) {
+    if (
+      board[0][i] === board[1][i] &&
+      board[1][i] === board[2][i] &&
+      board[0][i] !== ""
+    ) {
+      return board[0][i];
+    }
   }
   return null;
 }
 
+// Checks diagonals
 function checkDiagonals() {
-  // Diagonals
-  // check if the diagonals match
-  if (board[0] == board[4] && board[4] == board[8] && board[0] != "") {
-    changeCellColors([0, 4, 8]);
-    return board[0];
-  } else if (board[2] == board[4] && board[4] == board[6] && board[2] != "") {
-    changeCellColors([2, 4, 6]);
-    return board[2];
+  if (
+    board[0][0] === board[1][1] &&
+    board[1][1] === board[2][2] &&
+    board[0][0] !== ""
+  ) {
+    return board[0][0];
   }
+  if (
+    board[0][2] === board[1][1] &&
+    board[1][1] === board[2][0] &&
+    board[0][2] !== ""
+  ) {
+    return board[0][2];
+  }
+  return null;
 }
 
-function changeCellColors(cells) {
-  for (let i = 0; i < cells.length; i++) {
-    document.getElementById("button" + cells[i]).style.background = "#614385";
-  }
-}
-
-// update the score based on the winner
-function updateScore(winner) {
-  if (winner === "X") {
-    player1Score++;
-  } else {
-    player2Score++;
-  }
-  player1ScoreDisplay.querySelector("span").innerHTML = player1Score;
-  player2ScoreDisplay.querySelector("span").innerHTML = player2Score;
-}
-
-// disable all buttons
-function disableButtons() {
-  // loop through all the buttons to disable them
-  for (let i = 0; i < 9; i++) {
-    document.getElementById("button" + i).disabled = true;
-  }
-}
-
-// display the winner
+// Winner display functionality
 function displayWinner(symbol) {
-  winText.innerHTML = `${symbol} wins the game!`;
+  winText.innerHTML = `${symbol} wins!`;
   winText.style.color = "#b2f2bb";
   winText.style.fontWeight = "bold";
 }
 
-// Restart the game
+// Score update functionality
+function updateScore(winner) {
+  if (winner === "X") {
+    player1Score++;
+    player1ScoreDisplay.querySelector("span").innerHTML = player1Score;
+  } else {
+    player2Score++;
+    player2ScoreDisplay.querySelector("span").innerHTML = player2Score;
+  }
+}
+
+// button disable functionality
+function disableButtons() {
+  for (let i = 0; i < 9; i++) {
+    let button = document.getElementById("button" + i);
+    button.disabled = true;
+  }
+}
+
+// Restart funcionality
 function restartBtn() {
-  // restart all buttons to their initial state
+  currentPlayer = "X"; // Set the current player to "X"
+  playerTurnDisplay.textContent = "X's turn";
+  winText.textContent = "";
   for (let i = 0; i < 9; i++) {
     let button = document.getElementById("button" + i);
-    button.innerHTML = "";
-    button.disabled = false; // Re-enable the button
-    button.style.background = ""; // reset button color
-    currentPlayer = "X"; // resets the default player
+    button.textContent = ""; // Set the text content of the button to an empty string
+    button.disabled = false; // Enable the button
+    button.style.background = "";
   }
-  // reset the win text and player turn display
-  winText.innerHTML = "";
-  playerTurnDisplay.innerHTML = "X's turn"; // resets the turn
 }
 
-// start a new game
+// New game functionality
 function newGame() {
-  // Reset all buttons to their initial state
-  for (let i = 0; i < 9; i++) {
-    let button = document.getElementById("button" + i);
-    button.innerHTML = "";
-    button.disabled = false; // Re-enable the button
-    button.style.background = ""; // reset button color
-    currentPlayer = "X"; // resets the default player
-  }
-  // Reset the win text, player turn display, and player scores
-  winText.innerHTML = "";
-  playerTurnDisplay.innerHTML = "X's turn";
-  player1ScoreDisplay.querySelector("span").innerHTML = 0; // sets both values to 0
-  player2ScoreDisplay.querySelector("span").innerHTML = 0;
+  restartBtn();
+  player1ScoreDisplay.querySelector("span").innerHTML = "0";
+  player2ScoreDisplay.querySelector("span").innerHTML = "0";
 }
 
-// track the current player and handle cell clicks
+// Track the current player and handle cell clicks
 let currentPlayer = "X";
 
 function cellClick(button) {
-  // Ensure the cell is empty before placing a marker
   if (button.innerHTML === "") {
     button.innerHTML = currentPlayer;
-    button.disabled = true; // disable the button after its being clicked
+    button.disabled = true;
+    currentPlayer = currentPlayer === "X" ? "O" : "X";
+    playerTurnDisplay.innerHTML = currentPlayer + "'s turn";
   }
-
-  // Switch to the next player
-  currentPlayer = currentPlayer === "X" ? "O" : "X";
-
-  // Update turn display
-  playerTurnDisplay.innerHTML = currentPlayer + "'s turn";
+  createBoard();
   checkWinner();
 }
