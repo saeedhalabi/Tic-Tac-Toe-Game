@@ -82,6 +82,7 @@ body {
 #win-text {
   font-size: 1.5rem;
   color: lime;
+  margin-top: 20px;
 }
 
 /* Media query for small screens (up to 600px width, targeting smartphones and smaller tablets in portrait mode) */
