@@ -42,7 +42,7 @@ body {
   padding: 10px;
 }
 
-.grid .cell {
+.grid button {
   width: 100px;
   height: 100px;
   background-color: transparent;
@@ -54,16 +54,8 @@ body {
   transition: all ease-in-out 0.3s;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.grid .cell:hover {
+.grid button:hover {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-}
-
-.cell {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 40px;
 }
 
 #restart,
@@ -87,38 +79,7 @@ body {
   transition: background-color 0.3s, transform 0.3s;
 }
 
-#mini-cell0,
-#mini-cell1,
-#mini-cell2,
-#mini-cell3,
-#mini-cell4,
-#mini-cell5,
-#mini-cell6,
-#mini-cell7,
-#mini-cell8 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-}
-
-.mini-game {
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  outline: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.win-message {
-  margin-top: 20px;
-  position: relative;
-  left: 110%;
-  font-family: inherit;
-  font-style: italic;
-}
-
-.win-text {
+#win-text {
   font-size: 1.5rem;
   color: lime;
 }
@@ -150,7 +111,7 @@ body {
   }
 
   /* Adjusting the button size and font size in the grid for small screens */
-  .grid .cell {
+  .grid button {
     width: 80px;
     height: 80px;
     font-size: 1.5rem;
@@ -167,6 +128,10 @@ body {
   /* Adjusting the margin of the new game button for small screens */
   #new-game {
     margin-top: 14px;
+  }
+
+  #win-text {
+    margin-top: 22px;
   }
 }
 
@@ -185,7 +150,7 @@ body {
   }
 
   /* Adjusting the styling of buttons in the grid for larger screens */
-  .grid .cell {
+  .grid button {
     width: 80px;
     height: 80px;
     background-color: transparent;
@@ -207,7 +172,7 @@ body {
   }
 
   /* Adjusting the margin of the buttons container for larger screens */
-  .buttons {
+  .button {
     margin-bottom: 20px;
   }
 
@@ -258,7 +223,7 @@ body {
   }
 
   /* Adjusting the button size, font size, and margin for medium screens */
-  .grid .cell {
+  .grid button {
     width: 88px;
     height: 88px;
     font-size: 1.75rem;
