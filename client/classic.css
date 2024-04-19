@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* border: 2px solid red; */
 }
 
 body {
@@ -41,7 +42,7 @@ body {
   padding: 10px;
 }
 
-.grid button {
+.grid .cell {
   width: 100px;
   height: 100px;
   background-color: transparent;
@@ -53,11 +54,11 @@ body {
   transition: all ease-in-out 0.3s;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.grid button:hover {
+.grid .cell:hover {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
-.buttons {
+.cell {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,10 +80,6 @@ body {
   transition: background-color 0.3s;
 }
 
-#new-game {
-  margin-top: -15px;
-}
-
 #restart:hover,
 #new-game:hover {
   background-color: #e6e6e6;
@@ -90,8 +87,40 @@ body {
   transition: background-color 0.3s, transform 0.3s;
 }
 
-#win-text {
-  margin-top: 40px;
+#mini-cell0,
+#mini-cell1,
+#mini-cell2,
+#mini-cell3,
+#mini-cell4,
+#mini-cell5,
+#mini-cell6,
+#mini-cell7,
+#mini-cell8 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.mini-game {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  outline: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.win-message {
+  margin-top: 20px;
+  position: relative;
+  left: 110%;
+  font-family: inherit;
+  font-style: italic;
+}
+
+.win-text {
+  font-size: 1.5rem;
+  color: lime;
 }
 
 /* Media query for small screens (up to 600px width, targeting smartphones and smaller tablets in portrait mode) */
@@ -121,7 +150,7 @@ body {
   }
 
   /* Adjusting the button size and font size in the grid for small screens */
-  .grid button {
+  .grid .cell {
     width: 80px;
     height: 80px;
     font-size: 1.5rem;
@@ -137,12 +166,7 @@ body {
 
   /* Adjusting the margin of the new game button for small screens */
   #new-game {
-    margin-top: 0;
-  }
-
-  /* Adjusting the margin of the win text for small screens */
-  #win-text {
-    margin-top: 20px;
+    margin-top: 14px;
   }
 }
 
@@ -161,7 +185,7 @@ body {
   }
 
   /* Adjusting the styling of buttons in the grid for larger screens */
-  .grid button {
+  .grid .cell {
     width: 80px;
     height: 80px;
     background-color: transparent;
@@ -202,14 +226,6 @@ body {
     margin: 1em 0;
     font-size: 16px;
   }
-
-  /* Adjusting the positioning and font size of the win text for larger screens */
-  #win-text {
-    position: relative;
-    bottom: 22px;
-    font-size: 17px;
-    text-align: center;
-  }
 }
 
 /* Media query for medium screens (601px - 1024px width) */
@@ -242,7 +258,7 @@ body {
   }
 
   /* Adjusting the button size, font size, and margin for medium screens */
-  .grid button {
+  .grid .cell {
     width: 88px;
     height: 88px;
     font-size: 1.75rem;
@@ -260,12 +276,5 @@ body {
   /* Adjusting the margin of the new game button for medium screens */
   #new-game {
     margin-top: -16px;
-  }
-
-  /* Adjusting the margin and font size of the win text for medium screens */
-  #win-text {
-    margin-top: 15px;
-    font-size: 14px;
-    text-align: center;
   }
 }
