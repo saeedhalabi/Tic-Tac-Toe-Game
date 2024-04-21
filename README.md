@@ -25,7 +25,7 @@ The entire application was developed using Visual Studio Code, a versatile sourc
 
 ## Figma
 
-[Figma](https://www.figma.com/file/HNIGWD1fuanB5fiNvWfBZm/Tic-Tac-Toe-(Main-Game)?type=design&node-id=0%3A1&mode=design&t=rWH8qRJI0gek5pnk-1)
+[Figma File](https://www.figma.com/file/HNIGWD1fuanB5fiNvWfBZm/Tic-Tac-Toe-(Main-Game)?type=design&node-id=0%3A1&mode=design&t=rWH8qRJI0gek5pnk-1)
 
 ## Useful Extensions
 
