@@ -29,7 +29,7 @@ The entire application was developed using Visual Studio Code, a versatile sourc
 
 ## Useful Extensions
 
-1. **Live Server**
+1. **Code Runner**
    - **Extension:** [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
    - **Description:** A code runner extension where it runs the code in the terminal
 
@@ -53,7 +53,7 @@ The entire application was developed using Visual Studio Code, a versatile sourc
 3. Enjoy a game of Tic Tac Toe locally on your machine
 
 # Learnings
-Throughout the development of our Tic Tac Toe game, I gained valuable insights and skills in:
+Throughout the development of my Tic Tac Toe game, I gained valuable insights and skills in:
 
 - HTML5 for structuring web content.
 - CSS3 for styling and layout, creating a visually appealing user interface.
