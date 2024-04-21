@@ -29,7 +29,7 @@ The entire application was developed using Visual Studio Code, a versatile sourc
 
 ## Useful Extensions
 
-1. **Code Runner**
+1. **Code Run**
    - **Extension:** [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
    - **Description:** A code runner extension where it runs the code in the terminal
 
