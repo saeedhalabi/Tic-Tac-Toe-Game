@@ -36,6 +36,7 @@ The entire application was developed using Visual Studio Code, a versatile sourc
 # Links
 - Web Browser: [Download Google Chrome](https://www.google.com/chrome/)
 
+
 # Setup
 
 ### Cloning the Repository
