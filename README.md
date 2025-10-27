@@ -1,6 +1,5 @@
 # Tic Tac Toe: A Classic Game of Strategy and Fun
 
-![Project Showcase](tic_tac_toe.jpg)
 
 ## Description
 Indulge in the timeless joy of Tic Tac Toe with my digital adaptation! Whether you're looking to pass the time with a friend or challenge your strategic skills, this sleek web version of the beloved game offers endless entertainment. Take turns placing your X's and O's on the grid, aiming to achieve a line of three symbols in a row, column, or diagonal. With intuitive gameplay and customizable options, Tic Tac Toe is perfect for players of all ages.
@@ -18,24 +17,12 @@ Indulge in the timeless joy of Tic Tac Toe with my digital adaptation! Whether y
 - **CSS3**
 - **JavaScript**
 
-# Application of choice
-
-## VS-Code
-The entire application was developed using Visual Studio Code, a versatile source code editor known for its lightweight design and robust features.
 
 ## Figma
 
 [Figma File](https://www.figma.com/file/HNIGWD1fuanB5fiNvWfBZm/Tic-Tac-Toe-(Main-Game)?type=design&node-id=0%3A1&mode=design&t=rWH8qRJI0gek5pnk-1)
 
-## Useful Extensions
-
-1. **Code Run**
-   - **Extension:** [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
-   - **Description:** A code runner extension where it runs the code in the terminal
-
-# Links
-- Web Browser: [Download Google Chrome](https://www.google.com/chrome/)
-
+![Screenshots](./screenshots/tic_tac_toe.jpg)
 
 # Setup
 
@@ -52,18 +39,5 @@ The entire application was developed using Visual Studio Code, a versatile sourc
 2. Locate the <code>index.html</code> file in your editor and open it with your web browser
 3. Enjoy a game of Tic Tac Toe locally on your machine
 
-# Learnings
-Throughout the development of my Tic Tac Toe game, I gained valuable insights and skills in:
 
-- HTML5 for structuring web content.
-- CSS3 for styling and layout, creating a visually appealing user interface.
-- JavaScript for implementing game logic and interactivity.
-
-# Challenges Faced
-- Implementing game logic to ensure a fair and enjoyable gaming experience.
-- Creating a responsive design that works seamlessly across different devices and screen sizes.
-
-Despite these challenges, each obstacle provided an opportunity for growth, skill development, and a deeper understanding of web development principles.
-
-# Disclaimer
-This project is designed to be responsive, providing an optimal gaming experience on various devices and screen sizes. Please feel free to enjoy Tic Tac Toe on your preferred device.
+<p align="center"><strong>Crafted with ❤️ by Saeed Halabi</strong></p>
