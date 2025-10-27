@@ -22,6 +22,7 @@ Indulge in the timeless joy of Tic Tac Toe with my digital adaptation! Whether y
 
 [Figma File](https://www.figma.com/file/HNIGWD1fuanB5fiNvWfBZm/Tic-Tac-Toe-(Main-Game)?type=design&node-id=0%3A1&mode=design&t=rWH8qRJI0gek5pnk-1)
 
+## 📸 Screenshots
 ![Screenshots](./screenshots/tic_tac_toe.jpg)
 
 # Setup
